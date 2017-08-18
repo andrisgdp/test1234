@@ -1,0 +1,12 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'TestPingSDK' do
+  use_frameworks!
+	pod 'PingSDK', :path => 'PingSDK/PingSDK'
+
+	pre_install do |installer|
+	    def installer.verify_no_static_framework_transitive_dependencies; end
+	end
+end
+
